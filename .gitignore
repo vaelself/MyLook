@@ -4,3 +4,8 @@ data/*.broken-*
 __pycache__/
 .venv/
 .pytest_cache/
+
+# системные файлы и настройки редакторов
+.DS_Store
+.vscode/
+.idea/
