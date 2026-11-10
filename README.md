@@ -1,29 +1,27 @@
-# MyLook — Telegram wardrobe bot
+# MyLook — Telegram-бот для гардероба
 
-MyLook is a Telegram bot that helps you decide **what to wear**.
+MyLook — это Telegram-бот, который помогает решить, **что надеть**.
 
-You add the clothes you own, and the bot suggests outfits made only from your clothes.
+Вы добавляете свою одежду, а бот предлагает образы только из ваших вещей.
 
-> The bot talks to users in Russian.
+## Что умеет бот
 
-## What it does
+1. **Добавить одежду.** Отправьте фото, укажите название и тип вещи (верх, низ, обувь и т.д.).
+2. **Добавить места.** Например, «Вуз», «Прогулка» или «Ресторан». Затем отметьте, какие вещи подходят для какого места.
+3. **Получить образ.** Выберите место — бот покажет **2 варианта образа** из вашего гардероба.
+4. **Чего-то не хватает?** Бот подскажет, чего нет (например, «нет обуви»), и даст ссылки на поиск в Wildberries, Ozon и Lamoda.
 
-1. **Add your clothes.** Send a photo and give each item a name and type (top, bottom, shoes, etc.).
-2. **Add places.** For example "University", "Walk" or "Restaurant". Then mark which clothes fit which place.
-3. **Get an outfit.** Pick a place, and the bot shows you **2 outfit ideas** from your wardrobe.
-4. **Missing something?** The bot tells you what's missing (for example, "no shoes") and gives you search links for Wildberries, Ozon and Lamoda.
+Образ — это **верх + низ + обувь** или **цельная вещь (например, платье) + обувь**. Если есть, бот добавит ещё верхнюю одежду и аксессуар.
 
-An outfit is either **top + bottom + shoes** or **one-piece (like a dress) + shoes**. If you have them, the bot also adds a jacket and an accessory.
+## Как запустить
 
-## How to run it
+Нужен **Python 3.10 или новее**.
 
-You need **Python 3.10 or newer**.
+**1. Получите токен бота**
 
-**1. Get a bot token**
+Откройте [@BotFather](https://t.me/BotFather) в Telegram, отправьте `/newbot` и следуйте инструкциям. BotFather пришлёт токен. Никому его не показывайте.
 
-Open [@BotFather](https://t.me/BotFather) in Telegram, send `/newbot` and follow the steps. BotFather will give you a token. Keep it secret.
-
-**2. Install**
+**2. Установите зависимости**
 
 ```bash
 python -m venv .venv
@@ -31,45 +29,45 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**3. Add your token**
+**3. Добавьте токен**
 
-Copy `.env.example` to a new file called `.env` and put your token inside:
+Скопируйте файл `.env.example` в новый файл `.env` и впишите туда свой токен:
 
 ```
-BOT_TOKEN=your-token-here
+BOT_TOKEN=ваш-токен
 ```
 
-**4. Start the bot**
+**4. Запустите бота**
 
 ```bash
 python bot.py
 ```
 
-Now open your bot in Telegram and send `/start`.
+Теперь откройте своего бота в Telegram и отправьте `/start`.
 
-## Run the tests
+## Тесты
 
 ```bash
 pytest -q
 ```
 
-## Where things are
+## Что где лежит
 
-| File / folder | What it is |
+| Файл / папка | Что это |
 |---|---|
-| `bot.py` | Starts the bot |
-| `handlers/` | What the bot does for each button and command |
-| `outfit.py` | How outfits are picked |
-| `storage.py` | Saves your wardrobe to a file |
-| `shop.py` | Shop search links |
-| `texts.py` | All the bot's messages |
-| `tests/` | Tests |
-| `data/` | Your saved wardrobe (`wardrobe.json`, created automatically) |
+| `bot.py` | Запуск бота |
+| `handlers/` | Что бот делает на каждую кнопку и команду |
+| `outfit.py` | Как подбираются образы |
+| `storage.py` | Сохранение гардероба в файл |
+| `shop.py` | Ссылки на магазины |
+| `texts.py` | Все сообщения бота |
+| `tests/` | Тесты |
+| `data/` | Сохранённый гардероб (`wardrobe.json`, создаётся сам) |
 
-## Built with
+## Технологии
 
 Python, [aiogram 3](https://docs.aiogram.dev/), pytest.
 
-## License
+## Лицензия
 
 [MIT](LICENSE)
